@@ -6,10 +6,9 @@ sudo: required
 # branches:
 #   only:
 #   - master
-before_script:
- # - npm install -g @angular/cli
-  - npm install
+addons:
+  chrome: stable
+before_install:
+  - google-chrome-stable --headless --disable-gpu # --remote-debugging-port=9222 http://localhost &
 script:
-#- ng lint
-#- ng build --prod --base-href https://t-palmer.github.io/travis-demo/
  - ng e2e
